@@ -5,7 +5,10 @@ const store = createStore({
     return {
       name: "jly"
     }
-  }
+  },
+  mutations: {},
+  getters: {},
+  actions: {}
 })
 
 export default store
