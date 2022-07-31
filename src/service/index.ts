@@ -1,6 +1,7 @@
 //axios封装
 import JLYRequest from "./request"
 import { BASE_URL, TIME_OUT } from "./request/config"
+import LocalCache from "@/utils/cache"
 
 const jlyRequest = new JLYRequest({
   baseURL: BASE_URL,
@@ -8,7 +9,11 @@ const jlyRequest = new JLYRequest({
   // 实例的拦截器
   interceptors: {
     requestInterceptor: (config) => {
-      console.log("qingqiulanjie")
+      const token: string = LocalCache.getCache("token")
+      if (config.headers) {
+        console.log(token)
+        config.headers.Authorization = `Bearer ${token}`
+      }
       return config
     },
     resquestInterceptorCatch: (err) => {

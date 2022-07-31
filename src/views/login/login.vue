@@ -1,23 +1,24 @@
 <!-- eslint-disable vue/multi-word-component-names -->
 <template>
-  <div>
-    登录
-    <el-alert title="success alert" type="success" />
-    <el-alert title="info alert" type="info" />
-    <el-alert title="warning alert" type="warning" />
-    <el-alert title="error alert" type="error" />
-  </div>
+  <!-- 背景图片 -->
+  <div class="login"><login-panel></login-panel></div>
 </template>
 
 <script>
-export default {}
+import loginPanel from "./cpns/login-panel.vue"
+export default {
+  components: { loginPanel }
+}
 </script>
 
-<style>
-.el-alert {
-  margin: 20px 0 0;
-}
-.el-alert:first-child {
-  margin: 0;
+<style scoped lang="less">
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  height: 80%;
+  background: url("../../assets/img/login-bg.svg");
+  background-size: contain;
 }
 </style>

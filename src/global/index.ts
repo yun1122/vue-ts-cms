@@ -6,8 +6,33 @@ import {
   ElAutocomplete,
   ElAvatar,
   ElBacktop,
-  ElBadge
+  ElBadge,
+  ElTabs,
+  ElTabPane,
+  ElInput,
+  ElForm,
+  ElFormItem,
+  ElCheckbox,
+  ElLink,
+  ElContainer,
+  ElHeader,
+  ElMain,
+  ElMenu,
+  ElMenuItemGroup,
+  ElMenuItem,
+  ElSubMenu,
+  ElIcon,
+  ElDropdown,
+  ElDropdownItem,
+  ElDropdownMenu,
+  ElSelect,
+  ElOption,
+  ElRow,
+  ElDatePicker,
+  ElBreadcrumb,
+  ElBreadcrumbItem
 } from "element-plus"
+
 import "element-plus/dist/index.css"
 import { App } from "vue"
 
@@ -19,7 +44,32 @@ const components = [
   ElAutocomplete,
   ElAvatar,
   ElBacktop,
-  ElBadge
+  ElBadge,
+  ElTabs,
+  ElTabPane,
+  ElInput,
+  ElForm,
+  ElFormItem,
+  ElCheckbox,
+  ElLink,
+  ElContainer,
+  ElHeader,
+  ElMain,
+  ElMenu,
+  ElMenuItemGroup,
+  ElMenuItem,
+  ElSubMenu,
+  ElIcon,
+  ElDropdown,
+  ElDropdownItem,
+  ElDropdownMenu,
+  ElSelect,
+  ElOption,
+  ElRow,
+  ElRow,
+  ElDatePicker,
+  ElBreadcrumb,
+  ElBreadcrumbItem
 ]
 
 export function registerApp(app: App) {

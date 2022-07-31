@@ -58,7 +58,7 @@ class JLYRequest {
         }
       )
   }
-  request<T>(config: JLYRequestConfig): Promise<T> {
+  request<T>(config: JLYRequestConfig<T>): Promise<T> {
     return new Promise((resolve, reject) => {
       if (config.showLoading === false) {
         this.showLoading = config.showLoading
@@ -78,16 +78,16 @@ class JLYRequest {
     })
   }
   // request(){},
-  get<T>(config: JLYRequestConfig): Promise<T> {
+  get<T>(config: JLYRequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: "GET" })
   }
-  post<T>(config: JLYRequestConfig): Promise<T> {
+  post<T>(config: JLYRequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: "POST" })
   }
-  delete<T>(config: JLYRequestConfig): Promise<T> {
+  delete<T>(config: JLYRequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: "DELETE" })
   }
-  patch<T>(config: JLYRequestConfig): Promise<T> {
+  patch<T>(config: JLYRequestConfig<T>): Promise<T> {
     return this.request<T>({ ...config, method: "PATCH" })
   }
 }
