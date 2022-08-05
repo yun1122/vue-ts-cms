@@ -1,17 +1,17 @@
 <template>
   <div class="user">
-    <lyfrom v-bind="searchFormConfig"></lyfrom>
+    <page-search :searchFormConfig="searchFormConfig" />
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue"
-import Lyfrom from "@/baseui/from"
 import { searchFormConfig } from "./config/search.config"
+import PageSearch from "@/components/page-search"
 
 export default defineComponent({
   components: {
-    Lyfrom
+    PageSearch
   },
   setup() {
     return { searchFormConfig }
