@@ -58,7 +58,7 @@ class JLYRequest {
         }
       )
   }
-  request<T>(config: JLYRequestConfig<T>): Promise<T> {
+  request<T = any>(config: JLYRequestConfig<T>): Promise<T> {
     return new Promise((resolve, reject) => {
       if (config.showLoading === false) {
         this.showLoading = config.showLoading

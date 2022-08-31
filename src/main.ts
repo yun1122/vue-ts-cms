@@ -2,8 +2,7 @@ import { createApp } from "vue"
 import App from "./App.vue"
 import router from "./router"
 import store from "./store"
-import { registerApp } from "./global"
-import jlyRequest from "./service"
+import { globalRegister } from "./global"
 import "normalize.css"
 import "./assets/css/index.less"
 import * as ElementPlusIconsVue from "@element-plus/icons-vue"
@@ -14,9 +13,10 @@ setupStore()
 for (const [key, component] of Object.entries(ElementPlusIconsVue)) {
   app.component(key, component)
 }
-registerApp(app)
+globalRegister(app)
 app.use(router)
 app.use(store)
+
 app.mount("#app")
 
 // console.log(process.env.VUE_APP_BASE_URL)

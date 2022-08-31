@@ -7,7 +7,7 @@
       <template #footer>
         <div class="handle-btns">
           <el-button type="success">搜索</el-button>
-          <el-button type="success">重置</el-button>
+          <el-button type="success" @click="hanleResetClick">重置</el-button>
         </div>
       </template>
     </lyfrom>
@@ -17,6 +17,7 @@
 <script lang="ts">
 import { defineComponent, ref } from "vue"
 import Lyfrom from "@/baseui/from"
+import { propsToAttrMap } from "@vue/shared"
 
 export default defineComponent({
   props: {
@@ -28,15 +29,20 @@ export default defineComponent({
   components: {
     Lyfrom
   },
-  setup() {
-    const formData = ref({
-      id: "",
-      name: "",
-      password: "",
-      sportname: "",
-      createTime: ""
-    })
-    return { formData }
+  setup(props) {
+    const formItems = props.searchFormConfig?.formItems ?? []
+    const formOriginData: any = []
+    for (const item of formItems) {
+      formOriginData[item.field] = ""
+    }
+    console.log(formOriginData)
+    const formData = ref(formOriginData)
+    const hanleResetClick = () => {
+      for (const key in formOriginData) {
+        formData.value[`${key}`] = formOriginData[key]
+      }
+    }
+    return { formData, hanleResetClick }
   }
 })
 </script>

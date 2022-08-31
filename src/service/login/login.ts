@@ -1,5 +1,6 @@
 import jlyRequest from "../index"
-import { IAccount, IDataType } from "./type"
+import { IDataType } from "../types"
+import { IAccount } from "./type"
 
 enum LoginAPI {
   AccountLogin = "/login",

@@ -16,11 +16,12 @@
                 ></el-input>
               </template>
               <template v-else-if="item.type === 'select'">
-                <el-select :placeholder="item.placeholder">
+                <el-select :placeholder="item.placeholder" v-model="formData[`${item.field}`]">
                   <el-option
                     v-for="option in item.options"
                     :key="option.label"
-                    v-model="formData[`${item.field}`]"
+                    :label="option.label"
+                    :value="option.title"
                     >{{ option.title }}</el-option
                   >
                 </el-select>

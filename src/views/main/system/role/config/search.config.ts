@@ -10,38 +10,16 @@ export const searchFormConfig: IForm = {
   },
   fromItems: [
     {
-      field: "id",
-      type: "input",
-      label: "id",
-      placeholder: "请输入id"
-    },
-    {
       field: "name",
       type: "input",
       label: "用户名",
       placeholder: "请输入用户名"
     },
     {
-      field: "password",
-      type: "password",
-      label: "密码",
-      placeholder: "请输入用户名"
-    },
-    {
-      field: "sportname",
-      type: "select",
-      label: "选择",
-      placeholder: "选择喜欢的运动",
-      options: [
-        {
-          title: "篮球",
-          label: "basketball"
-        },
-        {
-          title: "足球",
-          label: "football"
-        }
-      ]
+      field: "intro",
+      type: "input",
+      label: "权限介绍",
+      placeholder: "请输入权限介绍"
     },
     {
       field: "createTime",
